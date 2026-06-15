@@ -59,17 +59,18 @@ export default async function HomePage() {
             ))}
           </div>
         </div>
-        <div className="relative">
-          <div className="surface relative mx-auto aspect-[16/9] max-w-xl overflow-hidden rounded-lg">
+        <div className="relative group">
+          <div className="surface relative mx-auto aspect-[16/9] max-w-xl overflow-hidden rounded-lg border border-black/10 dark:border-white/10 ring-1 ring-black/5 dark:ring-white/10 shadow-xl transition-all duration-500 group-hover:shadow-2xl group-hover:border-gold/30">
             <Image
               src="/arman.jpg"
               alt="Arman Ahamad - Web Developer & SEO Specialist"
               fill
               priority
-              className="object-cover"
+              quality={95}
+              className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
             />
           </div>
-          <div className="surface absolute -bottom-6 left-0 right-0 mx-auto w-[88%] rounded-lg p-5">
+          <div className="surface absolute -bottom-6 left-0 right-0 mx-auto w-[88%] rounded-lg p-5 shadow-lg border border-black/5 dark:border-white/5 transition-transform duration-500 group-hover:-translate-y-1">
             <div className="flex items-center gap-3">
               <ShieldCheck className="h-9 w-9 text-gold" />
               <p className="text-sm font-medium leading-6 text-ink dark:text-white">Premium websites with SEO strategy built into the foundation.</p>
