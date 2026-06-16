@@ -7,7 +7,6 @@ import { ShareButtons } from "@/components/blog/share-buttons";
 import dynamic from "next/dynamic";
 
 const CommentBox = dynamic(() => import("@/components/blog/comment-box").then((mod) => mod.CommentBox), {
-  ssr: false,
   loading: () => <div className="h-48 animate-pulse bg-black/5 dark:bg-white/5 rounded-lg border border-black/10 dark:border-white/10" />
 });
 import { Newsletter } from "@/components/shared/newsletter";
