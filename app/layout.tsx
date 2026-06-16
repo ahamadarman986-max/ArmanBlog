@@ -50,6 +50,10 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://cdn.sanity.io" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://cdn.sanity.io" />
+      </head>
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
         <Script id="theme-init" strategy="beforeInteractive">
           {`try{if(localStorage.theme==="dark"||(!("theme" in localStorage)&&window.matchMedia("(prefers-color-scheme: dark)").matches)){document.documentElement.classList.add("dark")}}catch(e){}`}

@@ -9,7 +9,7 @@ export function ProjectCard({ project }: { project: Project }) {
   return (
     <article className="surface overflow-hidden rounded-lg">
       <div className="relative aspect-[16/10] bg-gray-100 dark:bg-white/5">
-        {image ? <Image src={image} alt={project.image?.alt || project.title} fill className="object-cover" sizes="(min-width: 1024px) 33vw, 100vw" /> : null}
+        {image ? <Image src={image} alt={project.image?.alt || project.title} fill className="object-cover" sizes="(min-width: 1280px) 380px, (min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" /> : null}
       </div>
       <div className="p-6">
         <h3 className="font-display text-2xl font-semibold text-ink dark:text-white">{project.title}</h3>

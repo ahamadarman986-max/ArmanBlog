@@ -23,8 +23,8 @@ export function BlogCard({ post, priority = false }: BlogCardProps) {
               alt={post.featuredImage?.alt || post.title}
               fill
               priority={priority}
-              className="object-cover transition duration-500 group-hover:scale-105"
-              sizes="(min-width: 1024px) 33vw, 100vw"
+              className="object-cover transition duration-500 group-hover:scale-105 will-change-transform"
+              sizes="(min-width: 1280px) 380px, (min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
             />
           ) : null}
         </div>

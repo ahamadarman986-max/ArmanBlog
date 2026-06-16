@@ -3,8 +3,13 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArticleBody } from "@/components/blog/article-body";
 import { BlogCard } from "@/components/blog/blog-card";
-import { CommentBox } from "@/components/blog/comment-box";
 import { ShareButtons } from "@/components/blog/share-buttons";
+import dynamic from "next/dynamic";
+
+const CommentBox = dynamic(() => import("@/components/blog/comment-box").then((mod) => mod.CommentBox), {
+  ssr: false,
+  loading: () => <div className="h-48 animate-pulse bg-black/5 dark:bg-white/5 rounded-lg border border-black/10 dark:border-white/10" />
+});
 import { Newsletter } from "@/components/shared/newsletter";
 import { JsonLd } from "@/components/seo/json-ld";
 import { fallbackPosts, siteConfig } from "@/lib/constants";
@@ -96,7 +101,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
         {image ? (
           <div className="relative mt-10 aspect-[16/8] overflow-hidden rounded-lg bg-gray-100 dark:bg-white/5">
-            <Image src={image} alt={post.featuredImage?.alt || post.title} fill priority className="object-cover" sizes="100vw" />
+            <Image src={image} alt={post.featuredImage?.alt || post.title} fill priority className="object-cover" sizes="(min-width: 1024px) 896px, 100vw" />
           </div>
         ) : null}
       </header>

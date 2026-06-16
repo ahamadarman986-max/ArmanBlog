@@ -12,7 +12,7 @@ export function FeaturedPost({ post }: { post: Post }) {
     <article className="surface grid overflow-hidden rounded-lg lg:grid-cols-[1.15fr_0.85fr]">
       <div className="relative min-h-[320px] bg-gray-100 dark:bg-white/5">
         {image ? (
-          <Image src={image} alt={post.featuredImage?.alt || post.title} fill priority className="object-cover" sizes="(min-width: 1024px) 56vw, 100vw" />
+          <Image src={image} alt={post.featuredImage?.alt || post.title} fill priority className="object-cover" sizes="(min-width: 1280px) 736px, (min-width: 1024px) 56vw, 100vw" />
         ) : null}
       </div>
       <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">

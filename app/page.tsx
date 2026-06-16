@@ -67,7 +67,8 @@ export default async function HomePage() {
               fill
               priority
               quality={95}
-              className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+              sizes="(min-width: 1280px) 576px, (min-width: 1024px) 50vw, 100vw"
+              className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02] will-change-transform"
             />
           </div>
           <div className="surface absolute -bottom-6 left-0 right-0 mx-auto w-[88%] rounded-lg p-5 shadow-lg border border-black/5 dark:border-white/5 transition-transform duration-500 group-hover:-translate-y-1">
