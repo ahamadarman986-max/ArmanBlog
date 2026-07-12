@@ -92,5 +92,27 @@ export async function POST(request: Request) {
     console.log("⚠️ Resend API Key is not configured; skipped sending email.");
   }
 
+  // 4. Send WhatsApp notification via CallMeBot (if configured)
+  const callmebotKey = process.env.CALLMEBOT_API_KEY;
+  if (callmebotKey) {
+    try {
+      const waText = `🔔 *New Contact Inquiry*\n\n👤 *Name:* ${name}\n📧 *Email:* ${email}\n💼 *Project:* ${projectType || "Not Specified"}\n💬 *Message:* ${message}`;
+      const encodedText = encodeURIComponent(waText);
+      const callmebotUrl = `https://api.callmebot.com/whatsapp.php?phone=9779716293191&text=${encodedText}&apikey=${callmebotKey}`;
+      
+      const waResponse = await fetch(callmebotUrl);
+      if (!waResponse.ok) {
+        const errorText = await waResponse.text();
+        console.error("❌ CallMeBot WhatsApp API response error:", errorText);
+      } else {
+        console.log("🚀 WhatsApp notification sent successfully via CallMeBot");
+      }
+    } catch (err) {
+      console.error("❌ Failed to send WhatsApp notification via CallMeBot:", err);
+    }
+  } else {
+    console.log("⚠️ CallMeBot API Key is not configured; skipped sending WhatsApp message.");
+  }
+
   return NextResponse.json({ ok: true });
 }
