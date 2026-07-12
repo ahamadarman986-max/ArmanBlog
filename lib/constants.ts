@@ -12,7 +12,7 @@ export const siteConfig = {
   social: {
     facebook: "https://www.facebook.com/arman.ahamad.295829",
     instagram: "https://www.instagram.com/armanahamad8898?igsh=NGt0b3JxZGxka2dt",
-    whatsapp: "https://web.whatsapp.com/",
+    whatsapp: "https://wa.me/9779716293191",
     linkedin: "",
     twitter: "",
     github: ""
