@@ -157,7 +157,7 @@ export default async function AboutPage() {
             View all projects <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
-        <div className="mt-8 grid gap-6 md:grid-cols-3">
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projects.slice(0, 3).map((project) => (
             <ProjectCard key={project._id} project={project} />
           ))}

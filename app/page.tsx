@@ -107,7 +107,7 @@ export default async function HomePage() {
 
       <section className="section container-page">
         <SectionHeading eyebrow="Services" title="Growth services for premium digital brands" />
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map(({ icon: Icon, title, text }) => (
             <div key={title} className="surface rounded-lg p-6">
               <Icon className="h-8 w-8 text-gold" />

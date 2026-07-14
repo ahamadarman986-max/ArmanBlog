@@ -134,7 +134,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <section id="related" className="section bg-ivory dark:bg-white/[0.03]">
         <div className="container-page">
           <h2 className="font-display text-3xl font-semibold text-ink dark:text-white">Related posts</h2>
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((item) => <BlogCard key={item._id} post={item} />)}
           </div>
         </div>

@@ -48,7 +48,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
           <FeaturedPost post={featured} />
         </div>
       ) : null}
-      <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {pagedPosts.map((post, index) => <BlogCard key={post._id} post={post} priority={index === 0} />)}
       </div>
       <nav className="mt-10 flex items-center justify-center gap-3" aria-label="Pagination">
