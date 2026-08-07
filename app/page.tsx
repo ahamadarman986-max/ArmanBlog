@@ -46,18 +46,7 @@ export default async function HomePage() {
             <ButtonLink href="/projects" variant="secondary">View Projects</ButtonLink>
             <ButtonLink href="/contact" variant="ghost">Contact Me <ArrowRight className="ml-2 h-4 w-4" /></ButtonLink>
           </div>
-          <div className="mt-10 grid max-w-xl grid-cols-3 gap-4">
-            {[
-              ["120+", "Articles planned"],
-              ["35%", "Avg. speed lift"],
-              ["10+", "Growth systems"]
-            ].map(([value, label]) => (
-              <div key={label}>
-                <p className="font-display text-3xl font-semibold text-ink dark:text-white">{value}</p>
-                <p className="mt-1 text-xs font-medium uppercase tracking-[0.16em] text-muted dark:text-gray-400">{label}</p>
-              </div>
-            ))}
-          </div>
+
         </div>
         <div className="relative group">
           <div className="surface relative mx-auto aspect-[16/9] max-w-xl overflow-hidden rounded-lg border border-black/10 dark:border-white/10 ring-1 ring-black/5 dark:ring-white/10 shadow-xl transition-all duration-500 group-hover:shadow-2xl group-hover:border-gold/30">
